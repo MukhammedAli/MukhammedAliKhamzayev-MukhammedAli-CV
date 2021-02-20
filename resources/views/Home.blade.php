@@ -19,9 +19,9 @@
     
 
     <div class="navbar1" style="background-color: white;">
-        <div class="eachnav"><a href="gmail.com">Home</a></div>
-        <div class="eachnav"><a href="gmail.com">Skills</a></div>
-        <div class="eachnav"><a href="gmail.com">About me</a></div>
+        <div class="eachnav"><a href=" {{ route('home') }} ">Home</a></div>
+        <div class="eachnav"><a href=" {{ route('skills') }} ">Skills</a></div>
+        <div class="eachnav"><a href=" {{ route('contact') }} ">Contact</a></div>
     </div>
    
 
