@@ -33,3 +33,8 @@ Route::get('/post/create',function()
         'timestamp'=> '2021-02-23 12:11:01'
     ]);
 });
+Route::get('/post',function()
+{
+    $post = Post::find(1);
+    return  $post;
+});
