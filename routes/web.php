@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Models\Post;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,4 +24,12 @@ Route::get('/Contact', function () {
 Route::get('/Skills', function () {
     return view('Skills');
 })->name('skills');
-
+Route::get('/post/create',function()
+{   
+    DB::table('post')->insert([
+        'ID' => 1,
+        'title' => 'lab4',
+        'body' => 'CVwebsite',
+        'timestamp'=> '2021-02-23 12:11:01'
+    ]);
+});

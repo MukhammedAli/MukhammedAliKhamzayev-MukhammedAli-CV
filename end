@@ -1,0 +1,41 @@
+[33mcommit 96e5a98faf8a212a1b28b157e4a990233af639ba[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Tue Feb 23 11:50:17 2021 +0600
+
+    Creating Post model
+
+[33mcommit 8752a4f87006813bfce19d1dff6dbbbd2ed7c5f3[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Tue Feb 23 11:46:03 2021 +0600
+
+    Creating post table by migration
+
+[33mcommit b3cbe8fe26c220eaf474ae9ef5064fc5905f7700[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Sat Feb 20 12:27:18 2021 +0600
+
+    Giving the name for routes and connecting them
+
+[33mcommit 331f9f8ede2a486afc692e12ef75bbc500a42594[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Sat Feb 20 12:22:28 2021 +0600
+
+    Three routes for manipulating the path
+
+[33mcommit 547ba841bb47f8aef03d695a1020aadb4f53410f[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Sat Feb 20 12:04:44 2021 +0600
+
+    Inserting my templates into appropriate places
+
+[33mcommit 71690cd94e4792e97af2fcaa160292c72a060fa4[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Sat Feb 20 11:44:34 2021 +0600
+
+    Adding some description inside of readme file
+
+[33mcommit 2a3b95c481418a0770aa44b3361c63badb70d920[m
+Author: MukhammedAli <190103412@stu.sdu.edu.kz>
+Date:   Sat Feb 20 11:31:50 2021 +0600
+
+    Creating a Laravel project at the beginning
