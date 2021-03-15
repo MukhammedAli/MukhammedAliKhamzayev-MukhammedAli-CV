@@ -26,12 +26,25 @@ class PostTest extends TestCase
     }
     public function test_get_unexisted_post()
     {
-        $response = $this->get('/post/10000');
+        $response = $this->get('/post/23456');
         $response->assertStatus(404);
     }
     public function test_post_response()
     {
-        $response = $this->get('/post/1');
+        $response = $this->get('/post/15');
         $response->assertViewHas('post');
     }
+    public function test_route_exists()
+    {
+        $response = $this->get('/testcase');
+        $response->assertSee('Success');
+    }
+    public function test_route_checker()
+    {
+        $response = $this->get('/HelloWorld');
+        $response->assertStatus(404);
+    }
 }
+
+
+
