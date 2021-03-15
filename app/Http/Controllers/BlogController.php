@@ -22,6 +22,13 @@ class BlogController extends Controller
         ]);
         return back();
     }
+    public function get_blog($id)
+    {
+        $post = Post::find($id);
+        if($post == null )
+            return response(['message'=>'Page you are looking for does not exists'],404);
+        return view('blog.fortest')->with(['post'=>$post]);
+    }
 }
 
 

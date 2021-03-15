@@ -31,7 +31,7 @@ class PostTest extends TestCase
     }
     public function test_post_response()
     {
-        $response = $this->get('/post/15');
+        $response = $this->get('/post/1');
         $response->assertViewHas('post');
     }
     public function test_route_exists()
@@ -39,11 +39,12 @@ class PostTest extends TestCase
         $response = $this->get('/testcase');
         $response->assertSee('Success');
     }
-    public function test_route_checker()
+    public function test_different()
     {
-        $response = $this->get('/HelloWorld');
-        $response->assertStatus(404);
+            $response = $this->get('/post');
+            $response->assertStatus(200);
     }
+   
 }
 
 
