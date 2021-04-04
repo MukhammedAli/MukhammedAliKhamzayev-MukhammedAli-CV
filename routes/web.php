@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FormtableController;
+use App\Http\Controllers\SendController;
+use App\Models\Formtable;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,5 +54,12 @@ Route::get('/testcase',function()
 {
     return 'Success';
 });
+Route::post('formtable/create',[FormtableController::class,'createform'])->name('create-form');
+Route::get('formtable/create',function()
+{
+    return view('form.createform');
+});
+Route::get('formtable',[FormtableController::class,'display']);
+Route::get('mail/send',[SendController::class,'send']);
 
 
