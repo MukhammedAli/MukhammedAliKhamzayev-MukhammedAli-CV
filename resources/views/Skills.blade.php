@@ -10,15 +10,33 @@
    <link rel="stylesheet" href="<?php echo url('/'); ?>/css/base.css">  
    <link rel="stylesheet" href="<?php echo url('/'); ?>/css/main.css">
    
-	
+   <style>
+		ul{
+			display: flex;
+			float:left;
+			justify-content: flex-end;
+			list-style-type: none;
+			position: absolute;
+			left: 1200px;
+			top: 35px;
+		}
+	</style>
 </head>
 <body>
 
-	<div class="navbar1" style="background-color: white;">
-		<div class="eachnav"><a href=" {{ route('home') }} ">Home</a></div>
-        <div class="eachnav"><a href=" {{ route('skills') }} ">Skills</a></div>
-        <div class="eachnav"><a href=" {{ route('contact') }} ">Contact</a></div>
+<div class="navbar1" style="background-color: white;">
+        <div class="eachnav"><a href=" {{ route('home') }} ">{{__("Home")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('skills') }} ">{{__("Skills")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('contact') }} ">{{__("Contact")}}</a></div>
+		<div class="new">       @php $locale = session()->get('locale'); @endphp
+                        <ul class="floatstart">
+                        <li class="floatone"><a href="en">EN</a></li>
+                        <li class="floatone"><a href="ru">RU</a></li>
+                        <li class="floatone"><a href="kz">KZ</a></li>
+                        </ul>
+@section('content')</div>
     </div>
+   
    
 
 	<section id="services">
@@ -28,12 +46,10 @@
 		<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>Services</h5>
-   			<h1>What am I capable of?</h1>
+   			<h5>{{__("Services")}}</h5>
+   			<h1>{{__("What am I capable of?")}}</h1>
 
-   			<p class="lead">Here you find some additional services and my abilities.
-               </p>
-
+   			<p class="lead">{{__("Here you find some additional services and my abilities.")}}</p>
    		</div>   		
    	</div> 
 
@@ -47,13 +63,9 @@
 
 	            <div class="service-content">	
 
-	            	 <h3>Database</h3>
+	            	 <h3>{{__("Database")}}</h3>
 
-		            <p class="desc">
-                        I am introduced with database applications.
-                        Data manipulating languages like SQL Server and Oracle 
-                        PL/SQL languages are my best tools.
-	         		</p>
+		            <p class="desc">{{__("I am introduced with database applications.Data manipulating languages like SQL Server and Oracle PL/SQL languages are my best tools.")}}</p>
 	         		
 	         	</div> 	         	 
 
@@ -65,14 +77,9 @@
 
 	            <div class="service-content">	
 
-	            	<h3>Web Development</h3>  
+	            	<h3>{{__("Web Development")}}</h3>  
 
-		            <p class="desc">I have some fundamental experience in web 
-                        technologies. Currently , I code on some basic web programming
-                        languages like html css and javascript.
-                        Designing of web sites is fully own idea.
-                        So I create web applications only by own understanding.
-	         		</p>
+		            <p class="desc">{{__("I have some fundamental experience in web technologies. Currently , I code on some basic web programming languages like html css and javascript.Designing of web sites is fully own idea.So I create web applications only by own understanding.")}} </p>
 
 	            </div>	                          
 
@@ -86,10 +93,10 @@
 
 	            <div class="service-content">
 
-	            	<h3>Back End</h3>
+	            	<h3>{{__("Back End")}}</h3>
 
 		            <p class="desc">
-                        Only basic knowledge of PHP language and laravel framework a little bit.
+                        {{__("Only basic knowledge of PHP language and laravel framework a little bit.")}}
 	         		</p> 
 	         		
 	            </div>                
@@ -105,6 +112,9 @@
    	</div> 
 		
 	</section> 
-
+	@endsection
+	<main class="py-4">
+            @yield('content')
+        </main>
 </body>
 </html>

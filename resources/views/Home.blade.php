@@ -11,7 +11,16 @@
    <link rel="stylesheet" href="<?php echo url('/'); ?>/css/main.css">
    
   
-	
+	<style>
+		ul{
+			display: flex;
+			float:left;
+			justify-content: flex-end;
+			list-style-type: none;
+			position: absolute;
+			left: 1200px;
+		}
+	</style>
 
 </head>
 
@@ -19,9 +28,16 @@
     
 
     <div class="navbar1" style="background-color: white;">
-        <div class="eachnav"><a href=" {{ route('home') }} ">Home</a></div>
-        <div class="eachnav"><a href=" {{ route('skills') }} ">Skills</a></div>
-        <div class="eachnav"><a href=" {{ route('contact') }} ">Contact</a></div>
+        <div class="eachnav"><a href=" {{ route('home') }} ">{{__("Home")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('skills') }} ">{{__("Skills")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('contact') }} ">{{__("Contact")}}</a></div>
+		<div class="new">       @php $locale = session()->get('locale'); @endphp
+                        <ul class="floatstart">
+                        <li class="floatone"><a href="en">EN</a></li>
+                        <li class="floatone"><a href="ru">RU</a></li>
+                        <li class="floatone"><a href="kz">KZ</a></li>
+                        </ul>
+@section('content')</div>
     </div>
    
 
@@ -33,15 +49,15 @@
    		<div class="row">
 
    			<div class="col-twelve">
-	   			<h5>Hello, World.</h5>
-	   			<h1>I'm Khamzayev Mukhammed Ali</h1>
+	   			<h5>{{__("Hello, World.")}}</h5>
+	   			<h1>{{__("I'm Khamzayev Mukhammed Ali")}}</h1>
 
 	   			<p class="intro-position">
-	   				<span>Software Engineer</span>
-	   				<span>Application Developer</span> 
+	   				<span>{{__("Software Engineer")}}</span>
+	   				<span>{{__("Application Developer")}}</span> 
 	   			</p>
 
-	   			<a class="button stroke smoothscroll" href="#about" title="">More About Me</a>
+	   			<a class="button stroke smoothscroll" href="#about" title="">{{__("More About Me")}}</a>
 
 	   		</div>  
    			
@@ -62,20 +78,23 @@
    	<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>About</h5>
-   			<h1>Let me introduce myself.</h1>
+   			<h5>{{__("About")}}</h5>
+   			<h1>{{__("Let me introduce myself.")}}</h1>
 
    			<div class="intro-info">
 
    				<img src="<?php echo url('/'); ?>/images/Image.jpg" alt="Profile Picture">
 
-   				<p class="lead">Hi! My name is Khamzayev Mukhammed Ali. And I'm a sophomore at Suleiman demirel University.
-                       This is my own CV web page. Here you can email me and acquire some information about myself.
+   				<p class="lead">{{__("Hi! My name is Khamzayev Mukhammed Ali. And I'm a sophomore at Suleiman demirel University.This is my own CV web page. Here you can email me and acquire some information about myself.")}}
                    </p>
    			</div>   			
 
    		</div>   		
    	</div> 
+	@endsection
+	<main class="py-4">
+            @yield('content')
+        </main>
 </body>
 </html>
 

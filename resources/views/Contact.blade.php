@@ -10,7 +10,17 @@
 	     <link rel="stylesheet" href="<?php echo url('/'); ?>/css/base.css">  
   		 <link rel="stylesheet" href="<?php echo url('/'); ?>/css/main.css">
    
-       
+		   <style>
+		ul{
+			display: flex;
+			float:left;
+			justify-content: flex-end;
+			list-style-type: none;
+			position: absolute;
+			left: 1200px;
+			top: 35px;
+		}
+	</style>
 	
 
      
@@ -19,21 +29,27 @@
 <body>
     
 
-    <div class="navbar1" style="background-color: white;">
-		<div class="eachnav"><a href=" {{ route('home') }} ">Home</a></div>
-        <div class="eachnav"><a href=" {{ route('skills') }} ">Skills</a></div>
-        <div class="eachnav"><a href=" {{ route('contact') }} ">Contact</a></div>
+<div class="navbar1" style="background-color: white;">
+        <div class="eachnav"><a href=" {{ route('home') }} ">{{__("Home")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('skills') }} ">{{__("Skills")}}</a></div>
+        <div class="eachnav"><a href=" {{ route('contact') }} ">{{__("Contact")}}</a></div>
+		<div class="new">       @php $locale = session()->get('locale'); @endphp
+                        <ul class="floatstart">
+                        <li class="floatone"><a href="en">EN</a></li>
+                        <li class="floatone"><a href="ru">RU</a></li>
+                        <li class="floatone"><a href="kz">KZ</a></li>
+                        </ul>
+@section('content')</div>
     </div>
-   
      <section id="contact">
 
 		<div class="row section-intro">
    		<div class="col-twelve">
 
-   			<h5>Contact</h5>
-   			<h1>I'd Love To Hear From You.</h1>
+   			<h5>{{__("Contact")}}</h5>
+   			<h1>{{__("I'd Love To Hear From You.")}}</h1>
 
-   			<p class="lead">If you have some questions you can leave information below, so that later I will consider your request.</p>
+   			<p class="lead">{{__("If you have some questions you can leave information below, so that later I will consider your request.")}}</p>
 
    		</div> 
    	</div> 
@@ -47,21 +63,21 @@
       			<fieldset>
 
                   <div class="form-field">
- 						   <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="">
+ 						   <input name="contactName" type="text" id="contactName" placeholder='{{__("Name")}}'  value="" minlength="2" required="">
                   </div>
                   <div class="form-field">
-	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="">
+	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder='{{__("Email")}}' value="" required="">
 	               </div>
                   <div class="form-field">
-	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="">
+	     				   <input name="contactSubject" type="text" id="contactSubject" placeholder='{{__("Subject")}}' value="">
 	               </div>                       
                   <div class="form-field">
-	                 	<textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required=""></textarea>
+	                 	<textarea name="contactMessage" id="contactMessage" placeholder='{{__("Message")}}' rows="10" cols="50" required=""></textarea>
 	               </div>                      
                  <div class="form-field">
-                     <button class="submitform">Submit</button>
+                     <button class="submitform">{{__("Submit")}}</button>
                      <div id="submit-loader">
-                        <div class="text-loader">Sending...</div>                             
+                        <div class="text-loader">{{__("Sending...")}}</div>                             
        				      <div class="s-loader">
 								  	<div class="bounce1"></div>
 								  	<div class="bounce2"></div>
@@ -78,7 +94,7 @@
             </div>            
            
       		<div id="message-success">
-               <i class="fa fa-check"></i>Your message was sent, thank you!<br>
+               <i class="fa fa-check"></i>{{__("Your message was sent, thank you!")}}<br>
       		</div>
 
          </div> 
@@ -93,12 +109,12 @@
    				<i class="icon-pin"></i>
    			</div>
 
-   			<h5>Where to find me</h5>
+   			<h5>{{__("Where to find me")}}</h5>
 
    			<p>
-                Abylai Khan street 1/1<br>
-                Kaskelen, Almaty<br>
-                Kazakhstan
+                {{__("Abylai Khan street 1/1")}}<br>
+                {{__("Kaskelen, Almaty")}}<br>
+                {{__("Kazakhstan")}}
             </p>
 
    		</div>
@@ -109,7 +125,7 @@
    				<i class="icon-mail"></i>
    			</div>
 
-   			<h5>Email Me At</h5>
+   			<h5>{{__("Email Me At")}}</h5>
 
    			<p>190103412@stu.sdu.edu.kz<br>
 			   	muhammedalikhamzaev@gmail.com			     
@@ -123,9 +139,9 @@
    				<i class="icon-phone"></i>
    			</div>
 
-   			<h5>Call Me At</h5>
+   			<h5>{{__("Call Me At")}}</h5>
 
-   			<p>Phone: 87081003517<br>
+   			<p>{{__("Phone")}}: 87081003517<br>
 			
 			     	
 			   </p>
@@ -135,5 +151,9 @@
    	</div> 
 		
 	</section>
+	@endsection
+	<main class="py-4">
+            @yield('content')
+        </main>
 </body> 
     </html>

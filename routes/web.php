@@ -5,8 +5,11 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Post;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\FormtableController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SendController;
 use App\Models\Formtable;
+use Illuminate\Support\Facades\App;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -61,5 +64,12 @@ Route::get('formtable/create',function()
 });
 Route::get('formtable',[FormtableController::class,'display']);
 Route::get('mail/send',[SendController::class,'send']);
+Route::get('example/{lang}',function($lang)
+{
+    App::setlocale($lang);
+    return view('justforlang');
+}); 
 
 
+
+Route::get('/{lang}',[LocalizationController::class,'index']);
