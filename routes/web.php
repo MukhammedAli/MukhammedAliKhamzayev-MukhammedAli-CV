@@ -9,6 +9,7 @@ use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\SendController;
 use App\Models\Formtable;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\ProjectController;
 
 
 /*
@@ -63,6 +64,7 @@ Route::get('formtable/create',function()
     return view('form.createform');
 });
 Route::get('formtable',[FormtableController::class,'display']);
+// Route::get('mail',[SendController::class,'index']);
 Route::get('mail/send',[SendController::class,'send']);
 Route::get('example/{lang}',function($lang)
 {
@@ -70,6 +72,8 @@ Route::get('example/{lang}',function($lang)
     return view('justforlang');
 }); 
 
+Route::post('/makercontact',[ProjectController::class,'makeform'])->name('make_form');
 
 
+//Route::post('project/create',[ProjectController::class,'display']);
 Route::get('/{lang}',[LocalizationController::class,'index']);

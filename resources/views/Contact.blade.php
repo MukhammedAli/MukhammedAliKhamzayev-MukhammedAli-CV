@@ -6,7 +6,7 @@
          <meta name="description" content="">  
          <meta name="author" content="">
          <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-     
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 	     <link rel="stylesheet" href="<?php echo url('/'); ?>/css/base.css">  
   		 <link rel="stylesheet" href="<?php echo url('/'); ?>/css/main.css">
    
@@ -58,12 +58,26 @@
 
    		<div class="col-twelve">
 
-           
-            <form name="contactForm" id="contactForm" method="post" action="">
+           <!-- action="{{ route('make_form') }}" -->
+            <form name="contactForm" id="contactForm" method="POST" action=" {{ route('make_form') }}"  >
+			
+			 @csrf 
       			<fieldset>
 
                   <div class="form-field">
  						   <input name="contactName" type="text" id="contactName" placeholder='{{__("Name")}}'  value="" minlength="2" required="">
+                  </div>
+				  <div class="form-field">
+ 						   <input name="contactSurname" type="text" id="contactSurname" placeholder='Surname'  value="" minlength="2" required="">
+                  </div>
+				  <div class="form-field">
+ 						   <input name="contactPhone" type="text" id="contactPhone" placeholder='Phone number'  value="" minlength="2" required="">
+                  </div>
+				  <div class="form-field">
+ 						   <input name="contactOccupation" type="text" id="contactOccupation" placeholder='Occupation'  value="" minlength="2" required="">
+                  </div>
+				  <div class="form-field">
+ 						   <input name="contactAddress" type="text" id="contactAddress" placeholder='Address'  value="" minlength="2" required="">
                   </div>
                   <div class="form-field">
 	      			   <input name="contactEmail" type="email" id="contactEmail" placeholder='{{__("Email")}}' value="" required="">
@@ -73,7 +87,13 @@
 	               </div>                       
                   <div class="form-field">
 	                 	<textarea name="contactMessage" id="contactMessage" placeholder='{{__("Message")}}' rows="10" cols="50" required=""></textarea>
-	               </div>                      
+	               </div>
+				   <div class="form-field">
+	     				   <input name="contactImage" type="file" id="contactImage" placeholder='Image' value="Choose a file">
+	               </div>      
+				   
+				   
+				                         
                  <div class="form-field">
                      <button class="submitform">{{__("Submit")}}</button>
                      <div id="submit-loader">

@@ -10,7 +10,6 @@ use Illuminate\Queue\SerializesModels;
 class FormEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
     /**
      * Create a new message instance.
      *
@@ -29,14 +28,20 @@ class FormEmail extends Mailable
     public function build()
     {
         return $this->from('muhammedalikhamzaev@gmail.com')
+                    ->subject('Thanks for information!')
                     ->view('form.mailform')
-                    
-                    ->with(
-                        [
-                            'testVarOne' => '1',
-                            'testVarTwo' => '2',
-                        ]
-                        );
+                    ->with([ 
+                       'testVarOne' => '1',
+                       'testVarTwo' => '2',
+                    ]);
         // return $this->view('view.name');
+                         
+        
+        /*
+        [   
+            'testVarOne' => '1',
+            'testVarTwo' => '2',
+        ]
+        */
     }
 }
