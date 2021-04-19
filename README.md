@@ -1,7 +1,7 @@
-Special CV project for programming course.Below you can see some screen shotes which represents current web site. 
-CV web site contains three different pages , each of them accessible by three different routes on back end part. Home  
+Special CV project for programming course.Below you can see some screen shotes which represent current web site. 
+CV web site contains three different pages , each of them accessible by three different routes and supports three different languages on back end part. Home  
 introduction page loads at the first entry. Others pages are for contacing with me and also just some brief informations
-about my abilities. By using navigation bar it is possible to change pages with routes.
+about my abilities.Client can leave brief information about himself in the contact page. File upload and email sending functionalities exist. By using navigation bar it is possible to change pages with routes.
 
 
 This is ER diagram of my project. It contains two entities contact_infos and contact_responses. They have one to one relationship between them.
